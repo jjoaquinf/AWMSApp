@@ -1,0 +1,6 @@
+@AWMSApp_HostAddress = http://localhost:5273
+
+GET {{AWMSApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
