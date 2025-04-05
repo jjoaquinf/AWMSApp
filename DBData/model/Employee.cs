@@ -13,10 +13,11 @@ public partial class Employee
     [Key]
     public int EmployeeId { get; set; }
 
+    [Required]
     [Column(TypeName = "nvarchar (20)")]
     [StringLength(20)]
     public string LastName { get; set; } = null!;
-
+    [Required]
     [Column(TypeName = "nvarchar (10)")]
     [StringLength(10)]
     public string FirstName { get; set; } = null!;

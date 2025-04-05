@@ -3,9 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWMSApp", "AWMSApp.csproj", "{E90B3307-1956-4644-A92B-38C7CD477243}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWMSApp", "AWMSApp.csproj", "{E90B3307-1956-4644-A92B-38C7CD477243}"
+	ProjectSection(ProjectDependencies) = postProject
+		{27A9F714-7369-45D2-9BC5-1B373B209919} = {27A9F714-7369-45D2-9BC5-1B373B209919}
+		{DAAC0A75-1836-4C4D-97DD-2FB91E74264D} = {DAAC0A75-1836-4C4D-97DD-2FB91E74264D}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBData", "..\DBData\DBData.csproj", "{DAAC0A75-1836-4C4D-97DD-2FB91E74264D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBData", "..\DBData\DBData.csproj", "{DAAC0A75-1836-4C4D-97DD-2FB91E74264D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataContext", "..\DataContext\DataContext\DataContext.csproj", "{1CC45B39-1D35-4FF5-843D-4655392C2133}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAAC0A75-1836-4C4D-97DD-2FB91E74264D} = {DAAC0A75-1836-4C4D-97DD-2FB91E74264D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD", "..\AD\AD.csproj", "{27A9F714-7369-45D2-9BC5-1B373B209919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +32,14 @@ Global
 		{DAAC0A75-1836-4C4D-97DD-2FB91E74264D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAAC0A75-1836-4C4D-97DD-2FB91E74264D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAAC0A75-1836-4C4D-97DD-2FB91E74264D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CC45B39-1D35-4FF5-843D-4655392C2133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CC45B39-1D35-4FF5-843D-4655392C2133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CC45B39-1D35-4FF5-843D-4655392C2133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CC45B39-1D35-4FF5-843D-4655392C2133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A9F714-7369-45D2-9BC5-1B373B209919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A9F714-7369-45D2-9BC5-1B373B209919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A9F714-7369-45D2-9BC5-1B373B209919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A9F714-7369-45D2-9BC5-1B373B209919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

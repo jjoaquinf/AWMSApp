@@ -16,6 +16,7 @@ public partial class Product
     [Key]
     public int ProductId { get; set; }
 
+    [Required]
     [Column(TypeName = "nvarchar (40)")]
     [StringLength(40)]
     public string ProductName { get; set; } = null!;

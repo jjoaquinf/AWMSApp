@@ -35,31 +35,24 @@ public partial class NorthWindContext : DbContext
 
     public virtual DbSet<Territory> Territories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+    /*
+     * protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlite("Filename=NorthWind.db");
+    */
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>(entity =>
-        {
-            entity.Property(e => e.CategoryId).ValueGeneratedNever();
-        });
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.Property(e => e.EmployeeId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.Property(e => e.OrderId).ValueGeneratedNever();
-            entity.Property(e => e.Freight).HasDefaultValue(0.0);
         });
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.Property(e => e.Quantity).HasDefaultValue((short)1);
 
             entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails).OnDelete(DeleteBehavior.ClientSetNull);
 
@@ -68,22 +61,17 @@ public partial class NorthWindContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.Property(e => e.ProductId).ValueGeneratedNever();
-            entity.Property(e => e.ReorderLevel).HasDefaultValue((short)0);
-            entity.Property(e => e.UnitPrice).HasDefaultValue(0.0);
-            entity.Property(e => e.UnitsInStock).HasDefaultValue((short)0);
-            entity.Property(e => e.UnitsOnOrder).HasDefaultValue((short)0);
+          entity.Property(e => e.UnitPrice).HasConversion<double>();
         });
 
         modelBuilder.Entity<Shipper>(entity =>
         {
-            entity.Property(e => e.ShipperId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Supplier>(entity =>
         {
-            entity.Property(e => e.SupplierId).ValueGeneratedNever();
         });
+
 
         OnModelCreatingPartial(modelBuilder);
     }
